@@ -32,32 +32,15 @@ This project demonstrates clean architecture, concurrency, and real-world backen
 
 **🏗 Project Structure**
 
-task-service/
-├── cmd/
-│   └── api/
-│       └── main.go          # Application entry point
-├── internal/
-│   ├── api/
-│   │   └── handlers.go      # HTTP handlers
-│   ├── service/
-│   │   └── task_service.go  # Business logic + workers
-│   └── repository/
-│       ├── repository.go    # Repository interface
-│       └── sqlite_repository.go
-├── pkg/
-│   └── models/
-│       └── task.go          # Domain models
-├── Dockerfile
-├── go.mod
-├── go.sum
-└── README.md
+<img width="499" height="402" alt="image" src="https://github.com/user-attachments/assets/fa871d72-8f23-4a2a-ba38-14da6d532faa" />
+
 
 **🚀 Getting Started (Local)**
 
-1️⃣ Install dependencies
+**1️⃣ Install dependencies**
 go mod tidy
 
-2️⃣ Run the service
+**2️⃣ Run the service**
 go run ./cmd/api
 
 
@@ -87,7 +70,7 @@ Response
   "created_at": "2026-01-12T01:37:19Z"
 }
 
-🔍 Get Task
+**🔍 Get Task**
 GET /task?id=<task_id>
 
 
@@ -100,7 +83,7 @@ Response
   "created_at": "2026-01-12T01:37:19Z"
 }
 
-⚙ Background Workers
+**⚙ Background Workers**
 
 Workers are started on boot:
 
@@ -111,7 +94,7 @@ Tasks are processed asynchronously
 
 Status updates are persisted in SQLite
 
-🗄 Database
+**🗄 Database**
 
 SQLite database file: tasks.db
 
@@ -126,50 +109,50 @@ CREATE TABLE tasks (
   created_at DATETIME
 );
 
-🐳 Docker
+**🐳 Docker**
 Build image
 docker build -t task-service .
 
 Run container
 docker run -p 8080:8080 task-service
 
-🛑 Graceful Shutdown
+**🛑 Graceful Shutdown**
 
-Handles SIGINT / SIGTERM
+- Handles SIGINT / SIGTERM
 
-Stops HTTP server
+- Stops HTTP server
 
-Waits for workers to finish
+- Waits for workers to finish
 
-Safely closes resources
+- Safely closes resources
 
-🧠 Design Principles
+**🧠 Design Principles**
 
-Clean separation of concerns
+- Clean separation of concerns
 
-Repository pattern
+- Repository pattern
 
-Dependency injection
+- Dependency injection
 
-Concurrent worker pool
+- Concurrent worker pool
 
-Production-ready structure
+- Production-ready structure
 
-📈 Possible Improvements
+**📈 Possible Improvements**
 
-Pagination for task listing
+- Pagination for task listing
 
-Task retry / failure handling
+- Task retry / failure handling
 
-Authentication
+- Authentication
 
-Metrics & health checks
+- Metrics & health checks
 
-PostgreSQL / Redis support
+- PostgreSQL / Redis support
 
-Docker Compose
+- Docker Compose
 
-👨‍💻 Author
+**👨‍💻 Author**
 
 Aiman Danish
 Backend Engineer (Go)
